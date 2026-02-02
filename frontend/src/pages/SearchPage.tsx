@@ -57,19 +57,30 @@ export function SearchPage() {
           )}
 
           {data && !isLoading && (
-            <SearchResults
-              results={data.results}
-              query={data.query}
-              elapsedMs={data.elapsed_ms}
-            />
+            <>
+              <SearchResults
+                results={data.results}
+                query={data.query}
+                elapsedMs={data.elapsed_ms}
+              />
+
+              <div className="w-full max-w-2xl mx-auto p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+                <p className="text-sm text-yellow-800 dark:text-yellow-200 text-center">
+                  Disclaimer: Web crawl is from data several years ago. Many sites may no longer be available or have changed.
+                </p>
+              </div>
+            </>
           )}
+
         </div>
+        
       </main>
 
       <footer className="mt-12 py-6 border-t border-gray-200 dark:border-gray-800">
         <div className="container mx-auto px-4 text-center text-sm text-gray-500 dark:text-gray-400">
           UCI ICS Search Engine - Built with React, FastAPI, and TF-IDF ranking
         </div>
+
       </footer>
     </div>
   );
