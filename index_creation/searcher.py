@@ -92,11 +92,9 @@ class Searcher:
         try:
 
             pos = self.positional_indexes[partition][token]
-            with open(f"{self.split_path}/index_{partition}.jsonl", "r") as f:
-                # print(partition)
+            with open(f"{self.split_path}/index_{partition}.jsonl", "rb") as f:
                 f.seek(pos)
-                line = f.readline()  # Fix: readline() not readLine()
-                # print(line)
+                line = f.readline()
                 posting = json.loads(line)
                 return posting[token]
         except:
