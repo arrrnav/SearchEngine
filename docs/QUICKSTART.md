@@ -11,6 +11,7 @@ Get the UCI ICS Search Engine running locally in 3 minutes!
 ## Step 1: Start Backend (Terminal 1)
 
 ```bash
+./venv/Scripts/activate
 cd backend
 python -m pip install -r requirements.txt
 python main.py
