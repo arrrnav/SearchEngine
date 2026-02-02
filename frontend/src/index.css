@@ -1,6 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -8,16 +12,23 @@
   font-weight: 400;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
   min-height: 100vh;
+  width: 100%;
+  background: white;
+  overflow-x: hidden;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+html.dark,
+html.dark body {
+  background: rgb(17, 24, 39);
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
 }

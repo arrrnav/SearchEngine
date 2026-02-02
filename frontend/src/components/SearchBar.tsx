@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
 import { cn } from '../lib/utils';
 
 interface SearchBarProps {
@@ -9,7 +9,7 @@ interface SearchBarProps {
 export const SearchBar = ({ onSearch, isLoading }: SearchBarProps) => {
   const [query, setQuery] = useState('');
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (query.trim()) {
       onSearch(query.trim());
