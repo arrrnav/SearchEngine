@@ -3,13 +3,13 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Copy index files (large but necessary)
-COPY positional_indexes/ /app/positional_indexes/
-COPY alphabetized_indexes/ /app/alphabetized_indexes/
-COPY stats/ /app/stats/
+COPY data/positional_indexes/ /app/data/positional_indexes/
+COPY data/alphabetized_indexes/ /app/data/alphabetized_indexes/
+COPY data/stats/ /app/data/stats/
 
 # Copy backend code
 COPY backend/ /app/backend/
-COPY searcher.py /app/
+COPY index_creation/ /app/index_creation/
 
 # Install dependencies
 COPY backend/requirements.txt /app/

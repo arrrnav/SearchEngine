@@ -1,10 +1,10 @@
 import sys
 import os
 
-# Add parent directory to Python path to import searcher
+# Add parent directory to Python path to import from index_creation
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from searcher import Searcher
+from index_creation.searcher import Searcher
 from config import Config
 
 class SearchService:

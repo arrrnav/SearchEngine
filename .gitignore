@@ -69,13 +69,16 @@ htmlcov/
 .tox/
 
 # Large index files (exclude from git - regenerate with indexer.py and merger.py)
-positional_indexes/
-alphabetized_indexes/
+data/positional_indexes/
+data/alphabetized_indexes/
+data/stats/
 partial_indexes/
 combined_index.jsonl
 
 # Corpus data (exclude from git - too large)
-developer/
+index_creation/developer/
+index_creation/analyst/
+index_creation/ANALYST/
 analyst/
 
 # Keep stats folder but exclude large files if needed

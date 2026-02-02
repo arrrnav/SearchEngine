@@ -12,8 +12,8 @@ class Merger:
     def __init__(self):
         self.merge_root_path = "./partial_indexes"
         self.combined_index_path = "./combined_index.jsonl"
-        self.split_path = "./alphabetized_indexes"
-        self.pos_indexes_path = "./positional_indexes"
+        self.split_path = "./data/alphabetized_indexes"
+        self.pos_indexes_path = "./data/positional_indexes"
 
     def alphaFirst(self,keys):
         # Sort the keys in alphabetical order and returns the first one

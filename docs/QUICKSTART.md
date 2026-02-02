@@ -67,10 +67,10 @@ cd backend
 python -m pip install -r requirements.txt
 ```
 
-**Error: `FileNotFoundError: positional_indexes/index_1.json`**
+**Error: `FileNotFoundError: data/positional_indexes/index_1.json`**
 ```bash
-# Backend expects indexes in parent directory
-# Make sure you run from backend/ not from root
+# Backend expects indexes in data/ directory
+# Make sure the indexes have been generated first
 ```
 
 ### Frontend won't start
@@ -94,23 +94,29 @@ npm install
 
 ## Next Steps
 
-- **Read the full docs**: See `README_FULLSTACK.md`
-- **Deploy to production**: See `DEPLOYMENT.md`
-- **Review implementation**: See `IMPLEMENTATION_SUMMARY.md`
+- **Read the full docs**: See `docs/README_FULLSTACK.md`
+- **Deploy to production**: See `docs/DEPLOYMENT.md`
+- **Review implementation**: See `docs/IMPLEMENTATION_SUMMARY.md`
 
 ## File Structure Overview
 
 ```
 SearchEngine/
-├── backend/           # FastAPI backend
-│   ├── main.py       # Run this to start backend
+├── backend/                  # FastAPI backend
+│   ├── main.py              # Run this to start backend
 │   └── ...
-├── frontend/         # React frontend
-│   ├── src/         # Source code
+├── frontend/                # React frontend
+│   ├── src/                # Source code
 │   └── package.json
-├── positional_indexes/  # Search index files
-├── alphabetized_indexes/
-└── stats/
+├── index_creation/          # Index building pipeline
+│   ├── indexer.py          # Build indexes
+│   ├── merger.py           # Merge indexes
+│   └── searcher.py         # CLI search
+├── data/                    # Generated index files
+│   ├── positional_indexes/
+│   ├── alphabetized_indexes/
+│   └── stats/
+└── docs/                    # Documentation
 ```
 
 ## Common Commands

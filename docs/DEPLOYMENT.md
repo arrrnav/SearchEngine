@@ -149,8 +149,8 @@ Set up monitoring with UptimeRobot or similar:
 ### Update Search Index
 
 To rebuild indexes:
-1. Run `python indexer.py` and `python merger.py` locally
-2. Commit updated index files
+1. Run `python index_creation/indexer.py` and `python index_creation/merger.py` locally
+2. Commit updated index files in `data/`
 3. Push to GitHub
 4. Render auto-deploys with new indexes
 

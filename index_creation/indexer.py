@@ -40,8 +40,8 @@ EXAMPLE_INDEX ='''
 }
 '''
 
-URLS_PATH = './developer/DEV'
-# URLS_PATH = './analyst/ANALYST'
+URLS_PATH = './index_creation/developer/DEV'
+# URLS_PATH = './index_creation/analyst/ANALYST'
 
 TOKEN_FILTERS = ['ensm', 'ensg']
 
@@ -63,7 +63,7 @@ class Indexer:
         }
         self.stemmer = PorterStemmer()
         self.index_num = 1
-        self.stats_path = "./stats"
+        self.stats_path = "./data/stats"
         # self.position = 0
     
     def get_importance_factor(self, token, doc_id):

@@ -33,7 +33,7 @@ STOP_WORDS = {
 
 
 class Searcher:
-    def __init__(self, pos_indexes_path="./positional_indexes", split_path="./alphabetized_indexes", stats_path="./stats"):
+    def __init__(self, pos_indexes_path="./data/positional_indexes", split_path="./data/alphabetized_indexes", stats_path="./data/stats"):
         self.positional_indexes = {}
         self.pos_indexes_path = pos_indexes_path
         self.split_path = split_path
