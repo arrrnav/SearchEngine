@@ -1,0 +1,3 @@
+data/alphabetized_indexes/*.jsonl binary
+data/positional_indexes/*.json binary
+data/stats/*.json binary
