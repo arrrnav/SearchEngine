@@ -68,10 +68,7 @@ htmlcov/
 .pytest_cache/
 .tox/
 
-# Large index files (exclude from git - regenerate with indexer.py and merger.py)
-data/positional_indexes/
-data/alphabetized_indexes/
-data/stats/
+# Large index files (tracked for Render deployment)
 partial_indexes/
 combined_index.jsonl
 
