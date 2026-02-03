@@ -1,0 +1,57 @@
+UCI ICS Web Search Engine
+
+A full-stack web search engine that indexes and searches 42,645+ UCI ICS web pages using advanced information
+retrieval techniques, demonstrating expertise in algorithms, data structures, and modern web development.
+
+Technical Overview
+
+Built a production-ready search system with a 3-tier architecture:
+- Frontend: React 19 + TypeScript 5 SPA with Tailwind CSS, featuring dark/light mode, search history, and real-time result
+feedback
+- Backend: FastAPI REST API with async Python, deployed via Docker to Render
+- Search Core: Custom TF-IDF ranking engine with positional indexing and Boolean query support
+
+Key Technical Achievements
+
+Information Retrieval & Algorithms:
+- Implemented TF-IDF ranking algorithm with HTML tag-based importance weighting (e.g., <title> tags receive 20x weight
+  vs. body text)
+- Built positional indexing system achieving O(1) token lookup using byte offsets instead of linear file scanning
+- Designed 3-stage data pipeline: Indexer → Merger → Searcher, processing 143K+ unique tokens across 166MB of index
+data
+- Implemented k-way merge algorithm with streaming JSON parsing to combine partial indexes memory-efficiently
+- Applied Porter stemming and stop word filtering for improved search recall
+
+Data Structures & Optimization:
+- Partitioned inverted index into 6 alphabet-based files for memory efficiency
+- Used binary file operations with seek() for direct byte-level access, reducing search latency to ~30ms
+- Implemented bidirectional document ID ↔ URL mappings for efficient result retrieval
+
+Full-Stack Development:
+- Frontend: Modern React architecture with TypeScript, custom hooks, React Query for state management, and Vite for
+build tooling
+- Backend: RESTful API design with Pydantic validation, auto-generated Swagger documentation, and CORS configuration
+- DevOps: Docker containerization, environment-based configuration, deployment to Vercel (frontend) and Render
+(backend)
+
+Software Engineering Practices:
+- Component-based React architecture with separation of concerns
+- Type-safe development using TypeScript interfaces and Pydantic models
+- Client-side caching with React Query (5-minute TTL) for performance
+- Responsive UI with mobile-first design and system theme detection
+
+Technologies Used
+
+Backend: Python 3.11+, FastAPI, Uvicorn, NLTK, BeautifulSoup4, ijson
+Frontend: React 19, TypeScript 5, Vite 7, Tailwind CSS 4, TanStack Query, Axios
+Infrastructure: Docker, Vercel, Render, Git/GitHub
+
+Impact
+
+Successfully deployed a scalable search engine capable of sub-second query responses across 42K+ documents,
+demonstrating practical application of computer science theory (TF-IDF, inverted indexes) combined with modern web
+development practices.
+
+---
+This description effectively showcases your technical skills in algorithms, data structures, full-stack development,
+and production deployment—all highly relevant for internships and entry-level software engineering positions.

@@ -80,3 +80,5 @@ analyst/
 
 # Keep stats folder but exclude large files if needed
 # stats/
+
+note.md
