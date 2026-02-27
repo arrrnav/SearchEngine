@@ -5,8 +5,8 @@ from models import SearchResponse, StatsResponse
 import time
 
 app = FastAPI(
-    title="UCI Search Engine API",
-    description="Search engine for UCI ICS web pages with TF-IDF ranking",
+    title="Zotics Engine API",
+    description="Zotics Engine — search engine for UCI ICS web pages with TF-IDF ranking",
     version="1.0.0"
 )
 
