@@ -149,16 +149,16 @@ export function SearchPage() {
     <div className="min-h-screen bg-stone-50 dark:bg-stone-950 transition-colors duration-300 flex flex-col">
       {/* Sticky compact header */}
       <header className="sticky top-0 z-20 border-b border-stone-200 dark:border-stone-800 bg-stone-50/90 dark:bg-stone-950/90 backdrop-blur-sm">
-        <div className="max-w-3xl mx-auto px-4 py-3 flex items-center gap-3">
+        <div className="max-w-5xl mx-auto px-4 py-3 relative flex items-center">
           <button
             onClick={handleLogoClick}
-            className="font-serif text-xl text-stone-900 dark:text-stone-100 shrink-0 hover:text-amber-500 transition-colors duration-150"
+            className="font-serif text-2xl text-stone-900 dark:text-stone-100 shrink-0 hover:text-amber-500 transition-colors duration-150"
             aria-label="Back to home"
           >
             Zotics<span className="text-amber-500">.</span>
           </button>
 
-          <div className="flex-1">
+          <div className="absolute left-1/2 -translate-x-1/2 w-full max-w-md px-2">
             <SearchBar
               key={currentQuery}
               onSearch={handleSearch}
@@ -168,7 +168,9 @@ export function SearchPage() {
             />
           </div>
 
-          <ThemeToggle />
+          <div className="ml-auto">
+            <ThemeToggle />
+          </div>
         </div>
       </header>
 

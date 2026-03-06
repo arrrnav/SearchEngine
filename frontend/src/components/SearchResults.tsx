@@ -79,10 +79,10 @@ export const SearchResults = ({ results, query, elapsedMs }: SearchResultsProps)
             />
 
             <div className="flex-1 min-w-0">
-              <div className="text-sm font-medium text-stone-800 dark:text-stone-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors duration-150 truncate">
+              <div className="text-base font-medium text-stone-800 dark:text-stone-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors duration-150 truncate">
                 {getDomain(url)}
               </div>
-              <div className="text-xs text-stone-400 dark:text-stone-500 truncate mt-0.5">
+              <div className="text-sm text-stone-400 dark:text-stone-500 truncate mt-0.5">
                 {url}
               </div>
             </div>
