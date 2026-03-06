@@ -82,3 +82,8 @@ analyst/
 # stats/
 
 note.md
+.agents/
+.claude/
+.claudeignore
+docs/CLAUDE.md
+skills-lock.json
