@@ -173,7 +173,7 @@ class Searcher:
         ids_and_scores = self._calc_tf_idf(tokens, docs)
         ids_and_scores = sorted(ids_and_scores.items(), key=lambda x: x[1], reverse=True)
 
-        return [self.id_to_url[doc_id] for doc_id, _ in ids_and_scores[:5]]
+        return [self.id_to_url[doc_id] for doc_id, _ in ids_and_scores[:50]]
 
     def search(self, query):
         """Enhanced search method that handles both regular and boolean queries"""

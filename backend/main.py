@@ -38,7 +38,7 @@ async def health():
 @app.get("/search", response_model=SearchResponse)
 async def search(
     q: str = Query(..., description="Search query", min_length=1),
-    limit: int = Query(5, description="Maximum number of results", ge=1, le=20)
+    limit: int = Query(10, description="Maximum number of results", ge=1, le=50)
 ):
     if not q or len(q.strip()) == 0:
         raise HTTPException(status_code=400, detail="Query cannot be empty")
