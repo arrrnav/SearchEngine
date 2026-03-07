@@ -10,27 +10,23 @@ export const SearchHistory = ({ history, onSelectQuery, onClear }: SearchHistory
   if (history.length === 0) return null;
 
   return (
-    <div className="space-y-2 w-full max-w-2xl">
-      <div className="flex items-center justify-between">
-        <p className="text-sm text-gray-600 dark:text-gray-400">Recent searches</p>
-        <button
-          onClick={onClear}
-          className="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
-        >
-          Clear
-        </button>
-      </div>
-
-      <div className="flex flex-wrap gap-2">
-        {history.map((item, index) => (
+    <div className="flex flex-col items-center gap-2 w-full max-w-2xl animate-fade-in">
+      <div className="flex items-center gap-2 flex-wrap justify-center">
+        {history.slice(0, 7).map((item, index) => (
           <button
             key={index}
             onClick={() => onSelectQuery(item.query)}
-            className="px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+            className="px-3 py-1 rounded-full text-xs text-stone-500 dark:text-stone-400 border border-stone-200 dark:border-stone-700 hover:border-amber-400 hover:text-amber-600 dark:hover:border-amber-600 dark:hover:text-amber-400 transition-all duration-150 bg-transparent"
           >
             {item.query}
           </button>
         ))}
+        <button
+          onClick={onClear}
+          className="px-2 py-1 text-xs text-stone-300 dark:text-stone-600 hover:text-stone-500 dark:hover:text-stone-400 transition-colors"
+        >
+          clear
+        </button>
       </div>
     </div>
   );

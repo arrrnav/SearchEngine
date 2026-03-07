@@ -9,7 +9,7 @@ export const api = axios.create({
 });
 
 export const searchAPI = {
-  search: async (query: string, limit = 5): Promise<SearchResult> => {
+  search: async (query: string, limit = 50): Promise<SearchResult> => {
     const { data } = await api.get<SearchResult>('/search', {
       params: { q: query, limit }
     });
