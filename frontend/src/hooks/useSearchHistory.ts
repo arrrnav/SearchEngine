@@ -1,18 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import type { SearchHistoryItem } from '../types/search';
 
 const HISTORY_KEY = 'search_history';
 const MAX_HISTORY = 10;
 
 export const useSearchHistory = () => {
-  const [history, setHistory] = useState<SearchHistoryItem[]>([]);
-
-  useEffect(() => {
+  const [history, setHistory] = useState<SearchHistoryItem[]>(() => {
     const stored = localStorage.getItem(HISTORY_KEY);
-    if (stored) {
-      setHistory(JSON.parse(stored));
-    }
-  }, []);
+    return stored ? JSON.parse(stored) : [];
+  });
 
   const addToHistory = (query: string) => {
     const newItem: SearchHistoryItem = {

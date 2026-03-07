@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+const { execSync } = require('child_process');
+try {
+  execSync('npm run lint', { cwd: 'frontend', stdio: 'inherit' });
+} catch {
+  process.exit(1);
+}

@@ -60,7 +60,7 @@ export const SearchResults = ({ results, query, elapsedMs }: SearchResultsProps)
         {results.length} results &mdash; {formatElapsed(elapsedMs)}
       </p>
 
-      {pageResults.map((url, index) => {
+      {pageResults.map((url) => {
         return (
           <a
             key={url}
