@@ -120,23 +120,24 @@ class Searcher:
 
     def _calc_tf_idf(self, q_tokens, docs):
         scores = defaultdict(float)
-        # visited = set()
+        term_hits = defaultdict(int)
         for t in q_tokens:
             postings = self._get_postings(t)
             if not postings:
                 continue
             df = self.document_freqs.get(t, 1)
-            idf = math.log(self.total_docs / df) 
+            idf = math.log(1 + self.total_docs / df)
             for id in docs:
                 if id in postings:
                     tf = postings[id]["c"]
-                    tf_idf = 0 
                     if tf > 0:
-                        tf_idf = (1+math.log(tf)) * idf * postings[id]["s"]
-                    if id in scores:
-                        scores[id] = (scores[id] + tf_idf) * 4 if t not in STOP_WORDS else (scores[id] + tf_idf)
-                    else:
-                        scores[id] += tf_idf
+                        scores[id] += (1 + math.log(tf)) * idf * postings[id]["s"]
+                    if t not in STOP_WORDS:
+                        term_hits[id] += 1
+
+        for id in scores:
+            if term_hits[id] > 1:
+                scores[id] *= term_hits[id] ** 2
 
         return dict(scores)
     
