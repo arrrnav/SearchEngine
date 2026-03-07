@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import type { SearchHistoryItem } from '../types/search';
 
 const HISTORY_KEY = 'search_history';
@@ -10,7 +10,7 @@ export const useSearchHistory = () => {
     return stored ? JSON.parse(stored) : [];
   });
 
-  const addToHistory = (query: string) => {
+  const addToHistory = useCallback((query: string) => {
     const newItem: SearchHistoryItem = {
       query,
       timestamp: Date.now()
@@ -23,7 +23,7 @@ export const useSearchHistory = () => {
 
     setHistory(updated);
     localStorage.setItem(HISTORY_KEY, JSON.stringify(updated));
-  };
+  }, [history]);
 
   const clearHistory = () => {
     setHistory([]);

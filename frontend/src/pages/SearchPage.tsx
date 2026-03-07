@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SearchBar } from '../components/SearchBar';
 import { SearchResults } from '../components/SearchResults';
 import { SearchHistory } from '../components/SearchHistory';
@@ -55,9 +55,14 @@ export function SearchPage() {
   const { data, isLoading, error } = useSearch(currentQuery, !!currentQuery);
   const { history, addToHistory, clearHistory } = useSearchHistory();
 
+  useEffect(() => {
+    if (data?.query) {
+      addToHistory(data.query);
+    }
+  }, [data, addToHistory]);
+
   const handleSearch = (query: string) => {
     setCurrentQuery(query);
-    addToHistory(query);
     if (!hasSearched) setHasSearched(true);
   };
 
