@@ -130,14 +130,18 @@ class Searcher:
             for id in docs:
                 if id in postings:
                     tf = postings[id]["c"]
-                    if tf > 0:
+                    # Only accumulate score and count coverage for non-stop-word terms
+                    # to keep score accumulation and term_hits consistent
+                    if tf > 0 and t not in STOP_WORDS:
                         scores[id] += (1 + math.log(tf)) * idf * postings[id]["s"]
-                    if t not in STOP_WORDS:
                         term_hits[id] += 1
 
+        # Apply a linear coverage multiplier. Since scores already accumulate
+        # proportionally to N matching terms, multiplying by N gives an effective
+        # N*N = N^2 relative boost for full-coverage matches (1 term: 1x, 2: 4x, 3: 9x).
         for id in scores:
             if term_hits[id] > 1:
-                scores[id] *= term_hits[id] ** 2
+                scores[id] *= term_hits[id]
 
         return dict(scores)
     
