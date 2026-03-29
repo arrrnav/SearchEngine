@@ -40,15 +40,8 @@ Visit **http://localhost:5173** to search!
 
 ## Architecture
 
-```
-React + TypeScript Frontend (Vercel)
-           ↓ REST API
-FastAPI Backend (Render)
-           ↓
-Search Engine: Indexer → Merger → Searcher
-           ↓
-166MB Index (6 partitioned files, 143K tokens, 42K docs)
-```
+![ArchImage](https://media.discordapp.net/attachments/842457539035922452/1487931786905255936/SearchEngineArchitecture.png?ex=69caeff6&is=69c99e76&hm=ec2fb10bd1d0dbf3f4dd7f6f1d781fd6789f1c1395819c59f0fe1336f468b96b&=&format=webp&quality=lossless&width=1320&height=750)
+
 
 ### 3-Stage Pipeline
 
